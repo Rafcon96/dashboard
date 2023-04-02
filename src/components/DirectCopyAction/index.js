@@ -163,10 +163,10 @@ export default function DirectCopyAction({selectedTradeByID,
             <Button fullWidth onClick={handleBuy}>
                 <Grid container item sx={{backgroundColor:"#E9ECEF"}}>
                     <Grid  item container justifyContent={"center"}>
-                        {resourse.actionBtnTitle}
+                        <Typography variant='P3' sx={{color:"#858585"}}>{resourse.actionBtnTitle}</Typography>
                     </Grid>
                     <Grid justifyContent={"center"} item container>
-                        {`${resourse.actionBtnValue} ${lotSize}`}
+                        <Typography variant='subtitle1'>{`${resourse.actionBtnValue} ${lotSize}`}</Typography>
                     </Grid>
                 </Grid>
             </Button>
