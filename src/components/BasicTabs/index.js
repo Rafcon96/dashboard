@@ -54,7 +54,7 @@ export default function BasicTabs({renderChildren}) {
   };
 
   return (
-    <Box sx={{ backgroundColor:"#F8F9FA",width:"100%" }}>
+    <Box sx={{ backgroundColor:"#F8F9FA",width:"100%",padding:1 }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs 
           value={value} 

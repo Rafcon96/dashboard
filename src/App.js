@@ -53,7 +53,7 @@ function App() {
                   boughtTradeByID ={boughtTradeByID}
                   setSelectedTradeByID={setSelectedTradeByID}/> 
                 :
-                <PaperContainer styleProp={{backgroundColor:"#F8F9FA",padding:5, width:"100%"}}>
+                <PaperContainer styleProp={{backgroundColor:"#F8F9FA",padding:2, width:"100%"}}>
                   <DataGrid 
                     boughtTradeByID={boughtTradeByID} 
                     setSelectedTradeByID={setSelectedTradeByID} 
