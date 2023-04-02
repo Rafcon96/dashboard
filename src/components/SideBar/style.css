@@ -1,0 +1,13 @@
+.sidebar-container {
+    background-color: #FFFFFF;
+    padding-bottom: 10px;
+    border-radius: 5px;
+}
+#sign-btn {
+    justify-content: flex-start;
+    height: 50px;
+    background-color: #31A060;
+}
+.container-width {
+    width: 98%;
+}

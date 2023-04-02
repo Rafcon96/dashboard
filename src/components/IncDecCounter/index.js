@@ -1,43 +1,43 @@
 import { Button, InputBase, Paper } from "@mui/material";
 import React from "react";
-import AddIcon from '@mui/icons-material/Add';
-import RemoveIcon from '@mui/icons-material/Remove';
-import PropTypes from 'prop-types';
+import AddIcon from "@mui/icons-material/Add";
+import RemoveIcon from "@mui/icons-material/Remove";
+import PropTypes from "prop-types";
 
-function IncDecCounter({num,setNum}){
-
-  const incNum =()=>{
-    setNum(prev=> Math.round((Number(prev) + 0.01) * 100) / 100);
-  }
+function IncDecCounter({ num, setNum }) {
+  const incNum = () => {
+    setNum((prev) => Math.round((Number(prev) + 0.01) * 100) / 100);
+  };
 
   const decNum = () => {
-     if(num -0.01>=0){
-      setNum(prev=>Math.round((Number(prev) - 0.01) * 100) / 100);
-     }
-  }
- const handleChange = (e)=>{
-    const input = e.target.value
-    const regaxIsNumberPattern =/^\s*[+-]?(\d+|\d*\.\d+|\d+\.\d*)([Ee][+-]?\d+)?\s*$/
-    if(regaxIsNumberPattern.test(input)){
-        setNum(input)
+    if (num - 0.01 >= 0) {
+      setNum((prev) => Math.round((Number(prev) - 0.01) * 100) / 100);
     }
-  }
+  };
+  const handleChange = (e) => {
+    const input = e.target.value;
+    const regaxIsNumberPattern =
+      /^\s*[+-]?(\d+|\d*\.\d+|\d+\.\d*)([Ee][+-]?\d+)?\s*$/;
+    if (regaxIsNumberPattern.test(input)) {
+      setNum(input);
+    }
+  };
 
-   return(
+  return (
     <Paper
       component="form"
-      sx={{  display: 'flex', alignItems: 'center', width: "100%" }}
+      sx={{ display: "flex", alignItems: "center", width: "100%" }}
     >
-      <Button sx={{ backgroundColor:"#C1E3CF" }} onClick={decNum} >
+      <Button sx={{ backgroundColor: "#C1E3CF" }} onClick={decNum}>
         <RemoveIcon fontSize="large" />
       </Button>
       <InputBase
-        sx={{ flex: 1,textAlign:"center" }}
+        sx={{ flex: 1, textAlign: "center" }}
         value={num}
         onChange={handleChange}
-        inputProps={{min: 0, style: { textAlign: 'center' }}}
+        inputProps={{ min: 0, style: { textAlign: "center" } }}
       />
-      <Button sx={{ backgroundColor:"#C1E3CF" }} onClick={incNum} >
+      <Button sx={{ backgroundColor: "#C1E3CF" }} onClick={incNum}>
         <AddIcon fontSize="large" />
       </Button>
     </Paper>
