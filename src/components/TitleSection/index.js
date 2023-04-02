@@ -1,7 +1,6 @@
 import { Grid, IconButton, Typography, useMediaQuery } from '@mui/material'
 import React from 'react'
 import TwoLineText from '../TwoLineText'
-import Accordion from '../Accordion'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import PaperItem from '../PaperItem';
