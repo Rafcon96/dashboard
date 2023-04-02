@@ -34,22 +34,13 @@ import {
         fontSize: '2.25rem',
     },
     };
-    theme.typography.h2 = {
-    fontSize: '1.3rem',
-    '@media (min-width:600px)': {
-        fontSize: '1.6rem',
-    },
-    [theme.breakpoints.up('md')]: {
-        fontSize: '2.25rem',
-    },
-    };
     theme.typography.body1 = {
-    fontSize: '1.1rem',
+    fontSize: '1rem',
     '@media (min-width:600px)': {
-        fontSize: '1.2rem',
+        fontSize: '1.1rem',
     },
         [theme.breakpoints.up('md')]: {
-            fontSize: '1rem',
+            fontSize: '1.2rem',
         },
     };
 
@@ -99,6 +90,21 @@ import {
         [theme.breakpoints.up('md')]: {
             fontSize: '20px',
         },
+    };
+    theme.typography.SH1 = {
+        fontSize: "16px",
+        fontWeight: 600,
+        color:"#333333",
+        letterSpacing: '0.01em',
+    };
+    theme.typography.SH3 = {
+        fontSize: "14px",
+        letterSpacing: '0.01em',
+    };
+    theme.typography.P3 = {
+        fontSize: "14px",
+        fontWeight:400,
+        letterSpacing: '0.01em',
     };
 
 export default function CustomTheme({children}) {

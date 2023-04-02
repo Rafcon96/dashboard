@@ -12,6 +12,7 @@ export default function SideBar({selectedTradeByID,
                                  expanded,
                                  setExpanded
                                 }) {
+
     const [tradeBeenBought, setTradeBeenBought] = useState(false);
     const handleChangeAccodion = () =>{setExpanded(!expanded)}
                                       
@@ -24,41 +25,39 @@ export default function SideBar({selectedTradeByID,
         <Grid item >{iconFun()}</Grid>
         <Grid item sx={{color:"#5C5C5C"}}>{title}</Grid>
     </Grid>
-  return (
-    <Grid xs={3} item sx={{marginTop:1}}>
-        <Grid container spacing={1} style={{backgroundColor:"#FFFFFF",paddingBottom:10,borderRadius:"5px"}}>
-            <Grid item sx={{width:"98%"}} > 
-                <Button 
-                    variant="contained" 
-                    sx={{width:"100%",justifyContent: "flex-start",height:"50px",backgroundColor:"#31A060"}}>
-                    Sign in
-                </Button>
-        </Grid> 
-            <Grid item sx={{width:"98%"}} > 
-                <Acordion title={acordionTitle(renderSettingIcon, "Activate")} />
-            </Grid> 
-        <Grid item sx={{width:"98%"}}> 
-            <Acordion title={acordionTitle(renderNotifyIcon, "Notify")}  />
-        </Grid> 
-        <Grid item sx={{width:"98%"}}> 
-            <Acordion 
-                title={acordionTitle(renderCopyIcon, "Direct copy")} 
-                expanded={expanded} 
-                onChange={handleChangeAccodion}
-            >
-            {
-                !!selectedTradeByID && <DirectCopyAction 
-                                            selectedTradeByID={selectedTradeByID} 
-                                            setBoughtTradeByID={setBoughtTradeByID}
-                                            boughtTradeByID={boughtTradeByID}
-                                            setTradeBeenBought={setTradeBeenBought} 
-                                        />
-            }
-            </Acordion>
-        </Grid> 
-    </Grid>
 
-    
-    </Grid>
-  )
+    return (
+            <Grid container spacing={1} style={{backgroundColor:"#FFFFFF",paddingBottom:10,borderRadius:"5px"}}>
+                <Grid item sx={{width:"98%"}} > 
+                    <Button 
+                        variant="contained" 
+                        sx={{width:"100%",justifyContent: "flex-start",height:"50px",backgroundColor:"#31A060"}}>
+                        Sign in
+                    </Button>
+                </Grid> 
+                    <Grid item sx={{width:"98%"}} > 
+                        <Acordion title={acordionTitle(renderSettingIcon, "Activate")} />
+                    </Grid> 
+                <Grid item sx={{width:"98%"}}> 
+                    <Acordion title={acordionTitle(renderNotifyIcon, "Notify")}  />
+                </Grid> 
+                <Grid item sx={{width:"98%"}}> 
+                    <Acordion 
+                        title={acordionTitle(renderCopyIcon, "Direct copy")} 
+                        expanded={expanded} 
+                        onChange={handleChangeAccodion}
+                    >
+                    {
+                    !!selectedTradeByID && <DirectCopyAction 
+                                                selectedTradeByID={selectedTradeByID} 
+                                                setBoughtTradeByID={setBoughtTradeByID}
+                                                boughtTradeByID={boughtTradeByID}
+                                                setTradeBeenBought={setTradeBeenBought}
+                                                handleCancel={handleChangeAccodion} 
+                                            />
+                    }
+                    </Acordion>
+                </Grid> 
+            </Grid>
+    )
 }

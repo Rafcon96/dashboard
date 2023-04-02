@@ -2,15 +2,16 @@ import { Button, InputBase, Paper } from "@mui/material";
 import React from "react";
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
+import PropTypes from 'prop-types';
+
 function IncDecCounter({num,setNum}){
+
   const incNum =()=>{
-    
     setNum(prev=> Math.round((Number(prev) + 0.01) * 100) / 100);
-    
-  };
+  }
+
   const decNum = () => {
-     if(num -0.01>=0)
-     {
+     if(num -0.01>=0){
       setNum(prev=>Math.round((Number(prev) - 0.01) * 100) / 100);
      }
   }
@@ -20,7 +21,7 @@ function IncDecCounter({num,setNum}){
     if(regaxIsNumberPattern.test(input)){
         setNum(input)
     }
-}
+  }
 
    return(
     <Paper
@@ -29,7 +30,6 @@ function IncDecCounter({num,setNum}){
     >
       <Button sx={{ backgroundColor:"#C1E3CF" }} onClick={decNum} >
         <RemoveIcon fontSize="large" />
-        
       </Button>
       <InputBase
         sx={{ flex: 1,textAlign:"center" }}
@@ -40,7 +40,13 @@ function IncDecCounter({num,setNum}){
       <Button sx={{ backgroundColor:"#C1E3CF" }} onClick={incNum} >
         <AddIcon fontSize="large" />
       </Button>
-      </Paper>
+    </Paper>
   );
 }
+
+IncDecCounter.propTypes = {
+  num: PropTypes.number.isRequired,
+  setNum: PropTypes.func.isRequired,
+};
+
 export default IncDecCounter;

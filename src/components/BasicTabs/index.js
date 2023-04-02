@@ -26,7 +26,6 @@ function TabPanel(props) {
     >
       {value === index && (
         <Box component={'span'} sx={{ p: 3 }}>
-          
           {children}
         </Box>
       )}
@@ -57,8 +56,12 @@ export default function BasicTabs({renderChildren}) {
   return (
     <Box sx={{ backgroundColor:"#F8F9FA",width:"100%" }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        
-        <Tabs value={value} onChange={handleChange} variant="scrollable">
+        <Tabs 
+          value={value} 
+          onChange={handleChange} 
+          variant="scrollable" 
+          sx={{"& .MuiTab-root.Mui-selected": {background: '#EEF4FE'}}}
+        >
           {data.map((item,id)=><Tab 
             label={<span style={{fontSize:"clamp(0.7rem, 1.5vw, 1rem) "}}>
                     {item.label}
@@ -75,7 +78,6 @@ export default function BasicTabs({renderChildren}) {
           </TabPanel>)
       }
       </Box>
-     
     </Box>
   );
 }

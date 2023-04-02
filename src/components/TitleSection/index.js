@@ -12,7 +12,7 @@ const data=[{line1:'50,183.82',line2:"Balance"}
 
 ]
 
-export default function TitleSection({resource,textColor = "black"}) {
+export default function TitleSection() {
     const [open, setOpen] = React.useState(false);
     const mobileDisplay = useMediaQuery('(max-width:835px)');
 
@@ -31,10 +31,20 @@ export default function TitleSection({resource,textColor = "black"}) {
                         <Typography variant='h2' color='#31A060' >{ "402.70%"}</Typography>
                     </Grid>
                     <Grid item>
-                        <TwoLineText resource={{line1:"0.84771",line2:"Win %"}} textColor={textColor} />
+                        <TwoLineText 
+                            resource={{line1:"0.84771",line2:"Win %"}}
+                            variant1={'subtitle1'}
+                            variant2={'OP3'}
+                            style2={{opacity:0.6, textAlign:"left"}}
+                        />
                     </Grid>
                     <Grid item>
-                        <TwoLineText resource={{line1:"103",line2:"Age (weeks)"}} textColor={textColor} />
+                        <TwoLineText 
+                            resource={{line1:"103",line2:"Age (weeks)"}}
+                            variant1={'subtitle1'}
+                            variant2={'OP3'}
+                            style2={{opacity:0.6, textAlign:"left"}} 
+                        />
                     </Grid>
                 </>
             }
@@ -50,7 +60,13 @@ export default function TitleSection({resource,textColor = "black"}) {
             {open ? <Grid container variant='body1' >open text....</Grid>: null}
         </Grid>
         <Grid item container style={{gap:"10px",width:"100%"}}>
-            {data.map((item,id,row)=><PaperItem key={id} flexGrow={row.length -1 === id ? 2 : 1} line1={item.line1} line2={item.line2}/>)}
+            {data.map((item,id,row)=><PaperItem 
+                                        key={id} 
+                                        flexGrow={row.length -1 === id ? 2 : 1}
+                                        line1={item.line1} 
+                                        line2={item.line2}
+                                    />)
+            }
         </Grid>
     </Grid>
     )
