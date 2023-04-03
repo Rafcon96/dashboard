@@ -27,7 +27,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div>
       <Theme>
         <Grid container spacing={1} justifyContent={"center"}>
           <Grid xs={mobileDisplay ? 12 : 8} lg={9} item>
