@@ -162,11 +162,24 @@ export default function DirectCopyAction({
         >
           <Grid
             item
-            sx={{ width: "54%", backgroundColor: "#31A060", height: "5px" }}
+            sx={{
+              width: (findPercent(
+                tradeDataItem?.winTrade,
+                tradeDataItem?.lostTrade 
+              ) - 1 +"%"),
+              backgroundColor: "#31A060",
+              height: "5px",
+            }}
           />
           <Grid
             item
-            sx={{ width: "42%", backgroundColor: "#F53F3F", height: "5px" }}
+            sx={{
+              width:
+                (100 -
+                findPercent(tradeDataItem?.winTrade, tradeDataItem?.lostTrade) + "%"),
+              backgroundColor: "#F53F3F",
+              height: "5px",
+            }}
           />
         </Grid>
         <Grid
